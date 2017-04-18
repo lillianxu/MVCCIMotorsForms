@@ -1,0 +1,39 @@
+﻿@model List<MVCCIMotorsForms.Models.StaffClass>
+@{
+    ViewBag.Title = "SearchAct";
+}
+
+<h2>Staff Management</h2>
+<hr/>
+
+
+@{
+    if (ViewBag.SearchKey != null)
+    {
+        <span>
+            Search Key: @ViewBag.SearchKey
+        </span>
+    }
+}
+
+
+<table class="table table-bordered table-striped">
+
+    <tr>
+        <td>Staff Id</td>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Address1</th>
+        <th>Address2</th>
+    </tr>
+    @foreach( var sm in Model)
+    {
+        <tr>
+            <td>@sm.StaffId</td>
+            <td>@sm.FirstName</td>
+            <td>@sm.LastName</td>
+            <td>@sm.Address1</td>
+            <td>@sm.Address2</td>
+        </tr>
+    }
+</table>

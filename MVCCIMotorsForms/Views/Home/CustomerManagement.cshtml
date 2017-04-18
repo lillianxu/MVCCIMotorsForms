@@ -1,0 +1,58 @@
+﻿@model List<MVCCIMotorsForms.Models.StaffClass>
+@{
+    ViewBag.Title = "CustomerManagement";
+}
+
+<h2>CustomerManagement</h2>
+<div>
+    <a href="/Home/AddCustomer">Add a new customer</a>
+</div>
+
+
+@using (Html.BeginForm("SearchAct", "Home", FormMethod.Post))
+{
+
+    <div style="float:left">
+        Search by Last Name:
+        <input type="text" id="nameToFind" name="nameToFind">
+
+        <input type="submit" id="submitId" value="submit" />
+
+    </div>
+
+}
+
+@{
+    if (ViewBag.SearchKey != null)
+    {
+        <span>
+            Search Key: @ViewBag.SearchKey
+        </span>
+
+    }
+}
+
+<table class="table table-bordered table-striped">
+
+    <tr>
+        <td>Customer Id</td>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Address1</th>
+        <th>Address2</th>
+        <th>&nbsp</th>
+        <th>&nbsp</th>
+    </tr>
+    @foreach( var sm in Model)
+    {
+        <tr>
+            <td>@sm.StaffId</td>
+            <td>@sm.FirstName</td>
+            <td>@sm.LastName</td>
+            <td>@sm.Address1</td>
+            <td>@sm.Address2</td>
+            <td><a href="/Home/EditCustomer?staffId=@sm.StaffId">EditCustomer</a></td>
+            <td><a href="/Home/CustomerOrder?staffId=@sm.StaffId">EditOrder</a></td>
+        </tr>
+    }
+</table>

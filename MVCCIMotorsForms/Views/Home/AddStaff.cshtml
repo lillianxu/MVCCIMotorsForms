@@ -1,0 +1,66 @@
+﻿@model MVCCIMotorsForms.Models.StaffClass
+@{
+    ViewBag.Title = "AddStaff";
+}
+
+<h2>AddStaff</h2>
+
+<table>
+@using (Html.BeginForm())
+{
+    
+    <tr>
+        <td>FirstName</td><td>@Html.TextBoxFor(m => m.FirstName)</td>
+    </tr>
+    <tr>
+        <td>LastName</td>
+        <td>@Html.TextBoxFor(m => m.LastName)</td>
+    </tr>
+    <tr>
+        <td>Address1</td>
+        <td>@Html.TextBoxFor(m => m.Address1)</td>
+    </tr>
+
+    <tr>
+        <td>PhoneNumber</td>
+        <td>@Html.TextBoxFor(m => m.PhoneNumber)</td>
+    </tr>
+    <tr>
+        <td>PersonType</td>
+        <td>
+
+
+        @{
+           List<SelectListItem> listItems= new List<SelectListItem>();
+           listItems.Add(new SelectListItem
+                {
+                  Text = "Sales",
+                  Value = "1"
+                });
+           listItems.Add(new SelectListItem
+                {
+                    Text = "Manager",
+                    Value = "2",
+                    Selected = true
+                });
+           listItems.Add(new SelectListItem
+                {
+                    Text = "Staff",
+                    Value = "3"
+                });
+        }
+
+        @Html.DropDownListFor(model => model.PersonType, listItems, "--- Select Person Type ---")
+
+        
+        </td>
+    </tr>
+        <tr>
+            <td>
+                <input type="submit" />
+            </td>
+        </tr>
+}
+</table>
+
+

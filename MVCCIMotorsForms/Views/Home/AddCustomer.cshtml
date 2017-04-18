@@ -1,0 +1,37 @@
+﻿@model MVCCIMotorsForms.Models.StaffClass
+@{
+    ViewBag.Title = "AddCustomer";
+}
+
+<h2>AddCustomer</h2>
+
+<table>
+@using (Html.BeginForm())
+{
+    
+    <tr>
+        <td>FirstName</td><td>@Html.TextBoxFor(m => m.FirstName)</td>
+    </tr>
+    <tr>
+        <td>LastName</td>
+        <td>@Html.TextBoxFor(m => m.LastName)</td>
+    </tr>
+    <tr>
+        <td>Address1</td>
+        <td>@Html.TextBoxFor(m => m.Address1)</td>
+    </tr>
+
+    <tr>
+        <td>PhoneNumber</td>
+        <td>@Html.TextBoxFor(m => m.PhoneNumber)</td>
+    </tr>
+
+        <tr>
+            <td>
+                <input type="submit" />
+            </td>
+        </tr>
+}
+</table>
+
+
