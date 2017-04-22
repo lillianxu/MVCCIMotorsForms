@@ -1,0 +1,40 @@
+﻿@model List<MVCCIMotorsForms.Models.StaffClass>
+@{
+    ViewBag.Title = "AllCustomerOrder";
+}
+
+<h2>AllCustomerOrder</h2>
+
+<hr/>
+
+
+<div style="float:right;margin-bottom:50px;">
+    <a href="/Home/AddOrder">Add a new order</a>
+
+</div>
+
+
+<table class="table table-bordered table-striped">
+
+    <tr>
+        <th>SalesOrderId</th>
+        <th>Customer Id</th>
+        <th>LastName</th>
+        <th>OrderNumber</th>
+        <th>OrderDate</th>
+        <th>ProductId</th>
+        <th>&nbsp</th>
+    </tr>
+    @foreach( var co in Model)
+    {
+        <tr>
+            <td>@co.SalesOrderId</td>
+            <td>@co.StaffId</td>
+            <td>@co.LastName</td>
+            <td>@co.OrderNumber</td>
+            <td>@co.OrderTime</td>
+            <td>@co.ProductID</td>
+            <td><a href="/Home/EditOrder?salesOrderId=@co.SalesOrderId">Edit</a></td>
+        </tr>
+    }
+</table>

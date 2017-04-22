@@ -1,0 +1,31 @@
+﻿@model MVCCIMotorsForms.Models.StaffClass
+@{
+    ViewBag.Title = "AddOrderDetail";
+}
+
+<h2>AddOrderDetail</h2>
+<hr/>
+<table>
+@using (Html.BeginForm())
+{
+    
+    <tr>
+        <td>ProductId</td><td>@Html.TextBoxFor(m => m.ProductID)</td>
+    </tr>
+    <tr>
+        <td>OrderQuantity</td>
+        <td>@Html.TextBoxFor(m => m.OrderQty)</td>
+    </tr>
+    <tr>
+        <td>SalesOrderId</td>
+        <td>@Html.TextBoxFor(m => m.SalesOrderId)</td>
+    </tr>
+        <tr>
+            <td>
+                <input type="submit" />
+            </td>
+        </tr>
+}
+</table>
+
+

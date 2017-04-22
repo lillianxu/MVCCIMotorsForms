@@ -1,0 +1,49 @@
+﻿@model MVCCIMotorsForms.Models.StaffClass
+@{
+    ViewBag.Title = "EditOrder";
+}
+
+
+<h2>EditOrder</h2>
+<table>
+    @using (Html.BeginForm())
+    {
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.StaffId)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.StaffId)
+            </td>
+
+        </tr>
+       
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.OrderNumber)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.OrderNumber)
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.OrderTime)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.OrderTime)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" />
+            </td>
+        </tr>
+             
+        
+    }
+
+</table>
+
+

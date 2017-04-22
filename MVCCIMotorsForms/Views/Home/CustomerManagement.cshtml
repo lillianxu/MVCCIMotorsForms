@@ -4,10 +4,8 @@
 }
 
 <h2>CustomerManagement</h2>
-<div>
-    <a href="/Home/AddCustomer">Add a new customer</a>
-</div>
 
+<hr/>
 
 @using (Html.BeginForm("SearchAct", "Home", FormMethod.Post))
 {
@@ -32,6 +30,11 @@
     }
 }
 
+<div style="float:right;margin-bottom:50px;">
+    <a href="/Home/AddCustomer">Add a new customer</a>
+</div>
+
+
 <table class="table table-bordered table-striped">
 
     <tr>
@@ -51,8 +54,8 @@
             <td>@sm.LastName</td>
             <td>@sm.Address1</td>
             <td>@sm.Address2</td>
-            <td><a href="/Home/EditCustomer?staffId=@sm.StaffId">EditCustomer</a></td>
-            <td><a href="/Home/CustomerOrder?staffId=@sm.StaffId">EditOrder</a></td>
+            <td><a href="/Home/EditCustomer?staffId=@sm.StaffId">Edit</a></td>
+            <td><a href="/Home/CustomerOrder?staffId=@sm.StaffId">Order</a></td>
         </tr>
     }
 </table>

@@ -23,5 +23,11 @@ namespace MVCCIMotorsForms.Models
         public int PersonType { get; set; }
         [Display(Name = "Salary")]
         public Nullable<decimal> Salary { get; set; }
+        public string OrderNumber { get; set; }
+        public DateTime OrderTime { get; set; }
+        public int ProductID { get; set; }
+        public int SalesOrderId { get; set; }
+        public int OrderQty { get; set; }
+
     }
 }
